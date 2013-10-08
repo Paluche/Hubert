@@ -8,12 +8,9 @@ int main (int argc, char **argv)
     return -1;
   }
 
-
-  int i;
-  int u;
-  for (u = 1; u < argc; u++) {
+  for (int u = 1; u < argc; u++) {
     char *text = argv[u];
-    for (i = 0; text[i]; i++) {
+    for (int i = 0; text[i]; i++) {
       unsigned char letter = text[i];
       if (((letter >= 'a') && (letter < 'n')) ||
           ((letter >= 'A') && (letter < 'N'))) {
