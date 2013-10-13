@@ -4,11 +4,11 @@
 ;;; Customizations go in .emacs.d
 (add-to-list 'load-path "~/.emacs.d/")
 
-;; ===== Set standard indent to 4
-(setq standard-indent 4)
-(setq default-tab-width 4)
-(setq default-py-indent-offset 4)
-(setq c-basic-offset 4)
+;; ===== Set standard indent to 2
+(setq standard-indent 2)
+(setq default-tab-width 2)
+(setq default-py-indent-offset 2)
+(setq c-basic-offset 2)
 
 ;; ========== Line by line scrolling ==========
 ;; This makes the buffer scroll by only a single line when the up or

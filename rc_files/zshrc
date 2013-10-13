@@ -83,7 +83,7 @@ alias more=less
 alias l="ls -AFhl -g"
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
-alias lll='ls --=auto -lh | less'
+alias lll='ls --color=auto -lh | less'
 alias grep='grep --colour'
 alias ms='ls --color=auto'
 alias la='ls -a --color=auto'
@@ -224,12 +224,11 @@ export HISTSIZE=2000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 #Say how long a command took, if it took more than 10 seconds
-export REPORTTIME=10
+#export REPORTTIME=10
 
 # Watch other user login/out
 watch=notme
 export LOGCHECK=60
-
 
 # Lines for compiling and correct usr of openocd
 export PATH=$PATH:/opt/tools_arm/bin/
@@ -243,6 +242,7 @@ alias openocd="sudo /opt/openocd/bin/openocd"
 # SSH Completion
 users=(hlefevre paluche hubert)
 hosts=(191.168.1.100 198.168.1.101 ssh.enst.fr bar-telecom.kicks-ass.net a406-01.enst.fr a406-10.enst.fr paluche-laptop)
+
 zstyle ':completion:*' users $users
 zstyle ':completion:*:hosts' hosts $hosts
 
@@ -251,7 +251,7 @@ precmd () {print -Pn "\e]2;%n@%m%#  %~ %l  %w :: %T\a"}
 preexec () {print -Pn "\e]2;%n@%m%#  <$1>  %~ %l  %w :: %T\a"}
 
 # Misc settings
-export EDITOR="nano -mw"
+#export EDITOR="nano -mw"
 export LM_LICENSE_FILE=@flexlm.comelec.enst.fr
 
 # functions
@@ -312,3 +312,7 @@ fi
 #}
 #zle -N expand-or-complete-with-dots
 #bindkey "^I" expand-or-complete-with-dots
+#
+
+if(%m == "paluche_laptop")
+

@@ -37,9 +37,9 @@ set mouse=a   	    " I want my click back
 
 set number          " Show linenumbers
 set nowrap          " Turn off linewrap
-set tabstop=4       " 4 spaces
-set shiftwidth=4    " 4 spaces
-set softtabstop=4   " 4 spaces
+set tabstop=2       " 2 spaces
+set shiftwidth=2    " 2 spaces
+set softtabstop=2   " 2 spaces
 set expandtab       " Expand tabs to spaces
 
 set hlsearch        " highlight my search
