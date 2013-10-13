@@ -150,14 +150,13 @@ alias -g T='| tail'
 # lock screen using xscreensaver
 alias lock='xscreensaver-command -lock'
 
-# Shortcut
-alias gohubert='cd /media/paluche/OS/Users/Hubert'
 
 unsetopt beep                      # keep quiet
 unsetopt hist_beep
 unsetopt list_beep
 
 # Set Options
+setopt correct
 setopt autocd                      # Typing cd everytime is boring
 setopt auto_pushd pushd_minus      # don't use cd, use pushd
 setopt pushd_silent pushd_to_home
@@ -314,5 +313,9 @@ fi
 #bindkey "^I" expand-or-complete-with-dots
 #
 
-if(%m == "paluche_laptop")
+if [ `hostname` = "paluche-laptop" ]; then
+  alias gohubert='cd /media/paluche/OS/Users/Hubert'
+elif [ `hostname` = "dell-hlefevre" ]; then
+  #TODO Add here specific
+fi
 
