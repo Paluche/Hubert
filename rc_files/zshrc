@@ -83,12 +83,12 @@ alias more=less
 alias l="ls -AFhl -g"
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
-alias lll='ls --color=auto -lh | less'
+alias lll='ls --=auto -lh | less'
 alias grep='grep --colour'
 alias ms='ls --color=auto'
 alias la='ls -a --color=auto'
 alias sl='ls --color=auto'
-alias rm='nocorrect rm -i -r'   # no spelling correction on rm and ask for confirmation
+alias rm='nocorrect rm -r'   # no spelling correction on rm and ask for confirmation
 alias mv='nocorrect mv -i'      # no spelling correction on mv
 alias make='nocorrect make'     # no spelling correction on make
 alias locate='nocorrect locate' # no spelling correction on locate
@@ -103,24 +103,30 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gph='git push'
 alias gpl='git pull'
+alias gd='git diff'
+alias gap='git add -p'
 # Editors on shell
 alias pico='nano -mw'
 alias nano='nano -mw'
 # Auto launch
 alias -s html='firefox'
-alias -s c='emacs'
-alias -s h='emacs'
-alias -s o='emacs'
+alias -s c='vim'
+alias -s h='vim'
+alias -s o='vim'
+alias -s md='vim'
+alias -s cpp='vim'
+alias -s vim='vim'
+alias -s mk='vim'
+alias -s mkv='vlc'
 alias -s sv='emacs'
 alias -s v='emacs'
-alias -s md='emacs'
-alias -s cpp='emacs'
 alias -s txt='emacs'
 alias -s pdf='evince'
 alias -s odt='lowriter'
 alias -s odp='loimpress'
 alias -s ods='localc'
 alias -s xls='localc'
+alias -s py='python'
 # Auto background
 alias f='firefox &'
 alias xchat='xchat &'
@@ -141,9 +147,17 @@ alias -g L='| less'
 alias -g H='| head'
 alias -g S='| sort'
 alias -g T='| tail'
+# lock screen using xscreensaver
+alias lock='xscreensaver-command -lock'
+
+# Shortcut
+alias gohubert='cd /media/paluche/OS/Users/Hubert'
+
+unsetopt beep                      # keep quiet
+unsetopt hist_beep
+unsetopt list_beep
 
 # Set Options
-setopt nobeep                      # keep quiet
 setopt autocd                      # Typing cd everytime is boring
 setopt auto_pushd pushd_minus      # don't use cd, use pushd
 setopt pushd_silent pushd_to_home
@@ -227,8 +241,8 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 alias openocd="sudo /opt/openocd/bin/openocd"
 
 # SSH Completion
-users=(hlefevre paluche)
-hosts=(ssh.enst.fr a406-01.enst.fr a406-10.enst.fr paluche-laptop)
+users=(hlefevre paluche hubert)
+hosts=(191.168.1.100 198.168.1.101 ssh.enst.fr bar-telecom.kicks-ass.net a406-01.enst.fr a406-10.enst.fr paluche-laptop)
 zstyle ':completion:*' users $users
 zstyle ':completion:*:hosts' hosts $hosts
 
