@@ -1,0 +1,25 @@
+// Wait for a condition, if after the timeout the condition has not been verified it return -1.
+// The polling on the condition is made with a period.
+int wait_for(int condition, int timeout, int period) {
+
+    int previous =  xTaskGetTickCount() ;
+
+    if ((period > timeout) || (period == portMAX_DELAY)) {
+        trace("[Wait for function] Invalid arguments\n");
+        return -2;
+    }
+
+
+
+    while ((!condition) && ((previous + timeout) > xTaskGetTickCount())) {
+        trace("WAit!\n");
+        vTaskDelay(period);
+    }
+
+    if (condition)
+        return 0;
+    else
+        return -1;
+}
+
+
